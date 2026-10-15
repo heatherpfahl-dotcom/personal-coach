@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personal Coach</title>
+<meta name="description" content="A single-user, read-only tool that reviews its owner's own email and calendar once a week.">
+<style>
+  :root { --bg:#fbfbf9; --fg:#1d1d1b; --muted:#5f5f5a; --line:#e2e1db; --link:#1f5fa8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#161615; --fg:#ecebe6; --muted:#a3a29c; --line:#2e2e2b; --link:#8fb8ea; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  main { max-width:680px; margin:0 auto; padding:56px 16px 72px; }
+  h1 { font-size:30px; line-height:1.2; margin:0 0 20px; letter-spacing:-0.01em; }
+  p { margin:0 0 16px; }
+  a { color:var(--link); }
+  footer { margin-top:40px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Personal Coach</h1>
+  <p>Personal Coach is a tool that one person built for their own use. Once a week it reads its owner's Gmail and Google Calendar with read-only access, and it writes a weekly review, kept on the owner's computer, of reply times, replies still owed, the clarity of the owner's sent mail, recurring work patterns and calendar time.</p>
+  <p>The tool is not offered to anyone else. It runs only on the owner's computer and reads only the Google accounts the owner has signed in to it. Each week it sends an extract of that mail and calendar to Anthropic's Claude service, under the owner's own Claude account, to write the review, and it has no server or database of its own.</p>
+  <p>The <a href="privacy.html">privacy policy</a> lists the Google data the tool reads, where that data is sent, what is kept afterwards and how to revoke access.</p>
+  <footer>Last updated 15 October 2026.</footer>
+</main>
+</body>
+</html>

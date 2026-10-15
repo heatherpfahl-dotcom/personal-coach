@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personal Coach privacy policy</title>
+<meta name="description" content="What Personal Coach reads from Google accounts, where it is sent, what is kept and how to revoke access.">
+<style>
+  :root { --bg:#fbfbf9; --fg:#1d1d1b; --muted:#5f5f5a; --line:#e2e1db; --link:#1f5fa8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#161615; --fg:#ecebe6; --muted:#a3a29c; --line:#2e2e2b; --link:#8fb8ea; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  main { max-width:680px; margin:0 auto; padding:56px 16px 72px; }
+  h1 { font-size:30px; line-height:1.2; margin:0 0 8px; letter-spacing:-0.01em; }
+  h2 { font-size:19px; margin:36px 0 10px; }
+  p, li { margin:0 0 12px; }
+  ul { padding-left:22px; margin:0 0 12px; }
+  a { color:var(--link); }
+  .muted { color:var(--muted); }
+  footer { margin-top:40px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Personal Coach privacy policy</h1>
+  <p class="muted">Effective 15 October 2026.</p>
+
+  <h2>Who uses it</h2>
+  <p>Personal Coach is used by one person, its owner, to review the owner's own email and calendar. It runs only on the owner's computer and reads only the Google accounts the owner has listed in its configuration and signed in to personally. It is not offered to the public.</p>
+
+  <h2>What it reads</h2>
+  <p>The tool asks Google for two permissions, read-only access to Gmail (gmail.readonly) and read-only access to Google Calendar (calendar.readonly). It refuses to store any sign-in that grants more than those two, so it cannot send, change or delete email or calendar events.</p>
+  <ul>
+    <li>From Gmail it reads messages from the last 14 days, skipping chats, spam, trash, drafts and Gmail's promotions, social and forums tabs. Messages from automated senders are kept as sender, recipients, subject, date and a few Gmail labels, without the message text. Other messages keep the same fields and their text, with quoted earlier replies removed and the remaining text cut to 1,500 characters for received mail and 4,000 for mail the owner sent.</li>
+    <li>From Google Calendar it reads events from 7 days before to 7 days after each run, keeping each event's start and end, whether it lasts all day, its title and type (such as focus time or out of office), the number of other attendees, the owner's response and whether the owner organised it. Descriptions, locations and the names and email addresses of attendees are not written to the extract.</li>
+  </ul>
+
+  <h2>Where the data goes</h2>
+  <p>A script on the owner's computer fetches the data described above from Google and saves it as an extract, and code on the same computer computes reply times and calendar load from it. To write the weekly review, the extract, together with the previous week's review and the owner's own profile notes, is then sent to Anthropic's Claude service under the owner's own Claude account. That account has Anthropic's model-training setting turned off, so Anthropic does not train its models on this data and handles it under that account's retention terms, described in <a href="https://www.anthropic.com/legal/privacy">Anthropic's privacy policy</a>. In that step Claude has no tools that can send email, browse the web or run commands, and it can write only inside the run's reports folder.</p>
+  <p>Sign-in tokens are stored in the macOS Keychain on the owner's computer. Apart from the Anthropic step, the tool has no server, no database and no copy of the data anywhere else.</p>
+
+  <h2>What it keeps</h2>
+  <p>The email and calendar extract is deleted when each run ends, or at the start of the next run if a run is interrupted, and the run keeps no transcript of the Claude session. What remains is the owner's weekly review, which names the people awaiting a reply and what they asked for and quotes a few sentences from messages, and a file of aggregate counts per account, such as messages sent and the median reply time, which holds no subjects or names. A log of the actions Claude took during each run, which can include short search terms, is also kept. All of these stay on the owner's computer until the owner deletes them.</p>
+
+  <h2>Sharing and other uses</h2>
+  <p>Personal Coach does not sell, share or transfer Google user data to anyone other than the owner, except for the Anthropic processing step described above. It does not use the data for advertising, and it does not change anything in the owner's Google accounts. Personal Coach does not use Google user data to develop, improve or train generalized AI or machine-learning models.</p>
+  <p>Personal Coach's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+
+  <h2>Removing access</h2>
+  <p>Access for any account can be withdrawn at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>, after which the tool can no longer read that account. Revoking access does not delete reviews already written. Those are removed by deleting the reports folder, and the stored sign-in tokens by deleting the tool's Keychain entries.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy can be raised as an issue on <a href="https://github.com/heatherpfahl-dotcom/personal-coach/issues">the GitHub repository that publishes this page</a>.</p>
+
+  <footer><a href="index.html">Personal Coach home</a></footer>
+</main>
+</body>
+</html>
